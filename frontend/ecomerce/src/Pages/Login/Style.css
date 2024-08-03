@@ -1,0 +1,21 @@
+.text-center-div {
+    position: absolute;
+    width: 250px;
+    padding:30px;
+    background-color: #152a168c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.googlebg{
+    background:linear-gradient(to right,#E4E4E4, #FFFFFF);
+    border-radius: 5px;
+}
+.facebg{
+    background:linear-gradient(#298FFF, #0778F5);
+    border-radius: 5px;
+    color : #fff;
+}
