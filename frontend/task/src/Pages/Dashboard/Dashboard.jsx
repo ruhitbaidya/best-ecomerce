@@ -14,12 +14,13 @@ import { IoIosLogOut } from "react-icons/io";
 import TopSection from "./TopSection/TopSection";
 import FetchersSlider from "./FetcherSlider/FetchersSlider";
 import { userContext } from "../../UserAuth/UserAuth";
+import BottomSection from "./BottomSilder/BottomSection";
 
 
   const Dashboard = () => {
-    const {logoutuser} = useContext(userContext);
+    const {logoutuser, user} = useContext(userContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+    console.log(user.displayName)
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -100,9 +101,9 @@ import { userContext } from "../../UserAuth/UserAuth";
               <div>
                 <select className="select select-secondary w-full max-w-xs border-0 focus:outline-0">
                   <option disabled selected>
-                    User name
+                    {user.displayName}
                   </option>
-                  <option>user Email </option>
+                  <option>{user.email} </option>
                 </select>
               </div>
             </div>
@@ -133,7 +134,7 @@ import { userContext } from "../../UserAuth/UserAuth";
           <TopSection></TopSection>
           <div className="max-w-full">
             <FetchersSlider></FetchersSlider>
-          
+            <BottomSection></BottomSection>
           </div>
         </main>
       </div>

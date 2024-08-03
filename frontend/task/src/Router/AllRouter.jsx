@@ -4,6 +4,7 @@ import Register from "../Pages/Register/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import Sliders from "../Pages/Dashboard/FetcherSlider/PersonSlider";
+import BottomSlider from "../Pages/Dashboard/BottomSilder/BottomSlider";
 
 let router = createBrowserRouter([
    {
@@ -16,7 +17,7 @@ let router = createBrowserRouter([
    },
    {
    path : "/slide",
-   element : <Sliders></Sliders>
+   element : <BottomSlider></BottomSlider>
    },
    {
     path : "/dashboard",

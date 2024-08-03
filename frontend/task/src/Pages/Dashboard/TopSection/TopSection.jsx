@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const TopSection = () => {
   return (
     <>
-    <div className="topUp bg-[#FFFFFF] p-[25px] rounded-lg flex justify-between items-center gap-[25px]">
+    <div className="topUp bg-[#FFFFFF] p-[25px] rounded-lg lg:flex justify-between items-center gap-[25px]">
             <div>
             <p>I.m Looking for Massage Therapist Near...</p> <br />
             <p>In using this site, I agree to be bound by the <Link className="text-blue-500" to="#">Terms of Service</Link>  and  <Link className="text-blue-500" to="#">Privacy Policy</Link></p>

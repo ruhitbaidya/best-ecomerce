@@ -36,6 +36,7 @@ const PersonSlider = () => {
         }}
         modules={[Navigation]}
         className="mySwiper"
+
       >
         <SwiperSlide className="rounded-lg">
           <div className="card shadow-xl rounded-lg">
