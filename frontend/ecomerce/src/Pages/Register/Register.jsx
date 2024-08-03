@@ -1,13 +1,17 @@
 import imageReg from "../../assets/regbg.png";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Style.css";
 import { ToastContainer, toast } from 'react-toastify';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { userContext } from "../../UserAuth/UserAuth";
-
+import { FaEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa6";
 const Register = () => {
+  const [showPass, setShowPass] = useState(false)
+  const [showPass2, setShowPass2] = useState(false)
   const {signinemailpassowrd} = useContext(userContext);
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -23,6 +27,7 @@ const Register = () => {
           console.log(data.user)
           if(data.user){
             toast.success("Account Create SuccessFully")
+            navigate("/dashboard")
             reset();
           }
         })
@@ -87,24 +92,31 @@ const Register = () => {
                 </div>
                 <div className="mb-[18px]">
                   <label htmlFor="">Password</label>
-                  <input
+                 <div className="relative">
+                 <input
                     {...register("password", { required: true })}
                     className="w-full focus:outline-none p-[10px] border rounded-lg mt-[7px]"
-                    type="password"
+                    type={showPass2 ? 'text' : 'password'}
                     placeholder="Enter your password"
                   />
+                  <button onClick={()=> setShowPass2(!showPass2)} className="absolute top-5 right-3">{showPass2 ? <FaEye /> : <FaRegEyeSlash />}</button>
+                 </div>
+                  
                   {errors.password && (
                     <span className="text-red-500">Please Enter Password</span>
                   )}
                 </div>
                 <div className="mb-[18px]">
                   <label htmlFor="">Confirm Password</label>
+                  <div className="relative">
                   <input
                     {...register("confirmPassword", { required: true })}
                     className="w-full focus:outline-none p-[10px] border rounded-lg mt-[7px]"
-                    type="password"
+                    type={showPass ? 'text' : 'password'}
                     placeholder="Re-type password"
                   />
+                  <button onClick={()=> setShowPass(!showPass)} className="absolute top-5 right-3">{showPass ? <FaEye /> : <FaRegEyeSlash />}</button>
+                  </div>
                   {errors.confirmPassword && (
                     <span className="text-red-500">
                       Please Enter Confirm Password
