@@ -12,6 +12,7 @@ import { IoClose } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
 import TopSection from "./TopSection/TopSection";
+import FetchersSlider from "./FetcherSlider/FetchersSlider";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -86,9 +87,13 @@ const Dashboard = () => {
         <header className="bg-[#FFFFFF] border text-gray-700 flex justify-between items-center p-4">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center">
-                <div>
-                    <img className="w-12" src="https://cdn-icons-png.flaticon.com/512/11873/11873140.png" alt="" />
-                </div>
+              <div>
+                <img
+                  className="w-12"
+                  src="https://cdn-icons-png.flaticon.com/512/11873/11873140.png"
+                  alt=""
+                />
+              </div>
               <div>
                 <select className="select select-secondary w-full max-w-xs border-0 focus:outline-0">
                   <option disabled selected>
@@ -99,12 +104,17 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="flex items-center gap-[25px]">
-                <button className="border p-3 text-2xl rounded-full">
-                    <IoMdNotificationsOutline />
-                </button>
-                <button >
-                    <span className="flex items-center gap-[10px] text-[20px] text-[#F15E4A]">Log Out <span className="bg-[#FFECEA] p-3 rounded-full"><IoIosLogOut /></span></span>
-                </button>
+              <button className="border p-3 text-2xl rounded-full">
+                <IoMdNotificationsOutline />
+              </button>
+              <button>
+                <span className="flex items-center gap-[10px] text-[20px] text-[#F15E4A]">
+                  Log Out{" "}
+                  <span className="bg-[#FFECEA] p-3 rounded-full">
+                    <IoIosLogOut />
+                  </span>
+                </span>
+              </button>
             </div>
           </div>
           <button
@@ -116,8 +126,11 @@ const Dashboard = () => {
         </header>
 
         {/* Content Area */}
-        <main className="flex-1 p-6 bg-gray-100">
+        <main className="flex-1  p-6 bg-gray-100">
           <TopSection></TopSection>
+          <div className="max-w-full">
+            <FetchersSlider></FetchersSlider>
+          </div>
         </main>
       </div>
     </div>

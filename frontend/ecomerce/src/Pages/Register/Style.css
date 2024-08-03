@@ -1,0 +1,11 @@
+.text-center-div {
+    position: absolute;
+    width: 250px;
+    padding:30px;
+    background-color: #152a168c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}

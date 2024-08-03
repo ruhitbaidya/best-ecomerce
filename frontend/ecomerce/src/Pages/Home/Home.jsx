@@ -1,8 +1,11 @@
+import Sliders from "../Dashboard/FetcherSlider/Sliders"
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Sliders></Sliders>
+    </div>
   )
 }
 
