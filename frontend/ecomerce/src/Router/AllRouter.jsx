@@ -3,6 +3,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import Sliders from "../Pages/Dashboard/FetcherSlider/PersonSlider";
 
 let router = createBrowserRouter([
    {
@@ -12,6 +13,10 @@ let router = createBrowserRouter([
    {
     path : "/register",
     element : <Register></Register>
+   },
+   {
+   path : "/slide",
+   element : <Sliders></Sliders>
    },
    {
     path : "/dashboard",

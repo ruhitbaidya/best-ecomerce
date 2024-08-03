@@ -1,4 +1,4 @@
-import Sliders from "./Sliders";
+import Sliders from "./PersonSlider";
 
 const FetchersSlider = () => {
   return (
