@@ -1,8 +1,12 @@
-
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
 import imageReg from "../../assets/regbg.png";
 import {Link} from "react-router-dom"
 import "./Style.css";
+import { useContext } from "react";
+import { userContext } from "../../UserAuth/UserAuth";
 const Login = () => {
+  const {signInUser} = useContext(userContext)
   return (
     <div className="bg-white h-screen flex justify-center items-center">
     <div className="bg-white w-[90%] mx-auto rounded-lg p-[50px]">
@@ -40,7 +44,7 @@ const Login = () => {
               </div>
             </form>
             <div className="text-center">
-              <p>Don’t Have an Account?  <Link to="" className="text-[#4285F3]">Create Account</Link></p>
+              <p>Don’t Have an Account?  <Link to="/register" className="text-[#4285F3]">Create Account</Link></p>
             </div>
           </div>
         </div>
@@ -49,7 +53,7 @@ const Login = () => {
             <img src={imageReg} alt="" />
             <div className="text-center-div">
               <p className="text-white text-[18px]">
-                <Link to="" className="text-[#4285F3]">Sign In </Link>
+                <Link to="/register" className="text-[#4285F3]">Sign In </Link>
                to view all the massage therapists
               </p>
             </div>

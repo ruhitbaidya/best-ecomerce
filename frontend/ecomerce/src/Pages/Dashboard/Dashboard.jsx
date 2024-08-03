@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import { PiUsers } from "react-icons/pi";
@@ -13,8 +13,11 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
 import TopSection from "./TopSection/TopSection";
 import FetchersSlider from "./FetcherSlider/FetchersSlider";
+import { userContext } from "../../UserAuth/UserAuth";
 
-const Dashboard = () => {
+
+  const Dashboard = () => {
+    const {logoutuser} = useContext(userContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -107,7 +110,7 @@ const Dashboard = () => {
               <button className="border p-3 text-2xl rounded-full">
                 <IoMdNotificationsOutline />
               </button>
-              <button>
+              <button onClick={()=> logoutuser()}>
                 <span className="flex items-center gap-[10px] text-[20px] text-[#F15E4A]">
                   Log Out{" "}
                   <span className="bg-[#FFECEA] p-3 rounded-full">
@@ -130,6 +133,7 @@ const Dashboard = () => {
           <TopSection></TopSection>
           <div className="max-w-full">
             <FetchersSlider></FetchersSlider>
+          
           </div>
         </main>
       </div>
