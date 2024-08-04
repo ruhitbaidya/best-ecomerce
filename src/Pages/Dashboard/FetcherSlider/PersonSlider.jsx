@@ -64,7 +64,7 @@ const PersonSlider = () => {
             <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
             </div>
             <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">See Details</button>
+                <button className="py-[12px] hover:bg-[#156BCA] hover:text-[#FFFFFF] bg-[#D4E9FF] underline text-[#152A16] rounded-b-lg w-full">See Details</button>
               </div>
           </div>
         </SwiperSlide> )
