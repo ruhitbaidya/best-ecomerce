@@ -20,7 +20,7 @@ import BottomSection from "./BottomSilder/BottomSection";
   const Dashboard = () => {
     const {logoutuser, user} = useContext(userContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    console.log(user.displayName)
+    console.log(user)
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -93,8 +93,8 @@ import BottomSection from "./BottomSilder/BottomSection";
             <div className="flex items-center">
               <div>
                 <img
-                  className="w-12"
-                  src="https://cdn-icons-png.flaticon.com/512/11873/11873140.png"
+                  className="w-12 h-12 rounded-full"
+                  src={user.photoURL}
                   alt=""
                 />
               </div>
