@@ -1,0 +1,24 @@
+[
+    { "id": 1, "cityName": "New York" },
+    { "id": 2, "cityName": "Los Angeles" },
+    { "id": 3, "cityName": "Tokyo" },
+    { "id": 4, "cityName": "London" },
+    { "id": 5, "cityName": "Paris" },
+    { "id": 6, "cityName": "Sydney" },
+    { "id": 7, "cityName": "Toronto" },
+    { "id": 8, "cityName": "Dubai" },
+    { "id": 9, "cityName": "Singapore" },
+    { "id": 10, "cityName": "Hong Kong" },
+    { "id": 11, "cityName": "Berlin" },
+    { "id": 12, "cityName": "San Francisco" },
+    { "id": 13, "cityName": "Chicago" },
+    { "id": 14, "cityName": "Barcelona" },
+    { "id": 15, "cityName": "Moscow" },
+    { "id": 16, "cityName": "Mumbai" },
+    { "id": 17, "cityName": "Bangkok" },
+    { "id": 18, "cityName": "Rome" },
+    { "id": 19, "cityName": "Istanbul" },
+    { "id": 20, "cityName": "Seoul" },
+    { "id": 21, "cityName": "Amsterdam" }
+  ]
+  

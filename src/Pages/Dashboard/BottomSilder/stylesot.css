@@ -24,3 +24,6 @@
     object-fit: cover;
   }
   
+  .row-item {
+    border-bottom: 2px solid #e5e7eb; /* Tailwind's default border-gray-200 */
+  }
