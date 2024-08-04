@@ -10,7 +10,17 @@ import { FaLocationDot } from "react-icons/fa6";
 // import required modules
 import { Navigation } from "swiper/modules";
 import { FaCar } from "react-icons/fa";
+import { useEffect, useState } from "react";
 const PersonSlider = () => {
+  const [data, setData] = useState(null)
+ useEffect(()=>{
+  fetch('Persons.json')
+  .then((res)=> res.json() )
+  .then((data)=>{
+    console.log(data)
+    setData(data)
+  })
+ }, [])
   return (
     <>
       <Swiper
@@ -38,187 +48,27 @@ const PersonSlider = () => {
         className="mySwiper"
 
       >
-        <SwiperSlide className="rounded-lg">
+
+        {
+          data?.map((item)=> <SwiperSlide style={{width : "300px"}} key={item.name} className="rounded-lg">
           <div className="card shadow-xl rounded-lg">
             <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
+              <img style={{height : "200px", width : "300px"}} className="rounded-lg"
+                src={item?.imageUrl}
+                alt="images"
               />
             </div>
             <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
+            <h2 className="text-left font-bold mb-[15px]">{item.personName}</h2>
+            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>{item.countryZipCode}, {item.cityName}</span> </p>
             <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
             </div>
             <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
+                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">See Details</button>
               </div>
           </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="rounded-lg">
-          <div className="card shadow-xl rounded-lg">
-            <div className="p-[10px] mb-[10px]">
-              <img className="rounded-lg"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </div>
-            <div className="px-[10px]">
-            <h2 className="text-left font-bold mb-[15px]">Alexander</h2>
-            <p className="flex gap-[6px] items-center"> <FaLocationDot /> <span>123 Elm Street, New York</span> </p>
-            <p className="flex gap-[6px]  items-center"> <FaCar />  <span>Mobile & In-Studio</span></p>
-            </div>
-            <div className="mt-[15px]">
-                <button className="py-[12px] bg-blue-500 rounded-b-lg w-full">Buy Now</button>
-              </div>
-          </div>
-        </SwiperSlide>
-        
+        </SwiperSlide> )
+        }        
       </Swiper>
     </>
   );
