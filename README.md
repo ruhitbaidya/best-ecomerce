@@ -26,7 +26,7 @@ To run this project locally, follow these steps:
 
    ```bash
  -  git clone https://github.com/ruhitbaidya/best-ecomerce in your local computer.
- -  then you got to root folder and run **npm run dev**
+ -  then you got to root folder and run **npm install**
  - then run the project **npm run dev**
  
    
