@@ -6,6 +6,7 @@ import auth from "../firebase.config";
 export const userContext = createContext();
 
 const UserAuth = ({children}) => {
+    const [search, setSearch] = useState("")
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const signinemailpassowrd = (email, password)=>{
@@ -37,7 +38,7 @@ const UserAuth = ({children}) => {
         }
     })
 
-    const info = {user, signinemailpassowrd, loading, logoutuser, signInUser, signinWithGoogle}
+    const info = {user, signinemailpassowrd, loading, logoutuser, signInUser, signinWithGoogle, search, setSearch}
   return (
     <userContext.Provider value={info}>
         {children}

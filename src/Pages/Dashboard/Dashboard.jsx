@@ -15,12 +15,11 @@ import TopSection from "./TopSection/TopSection";
 import FetchersSlider from "./FetcherSlider/FetchersSlider";
 import { userContext } from "../../UserAuth/UserAuth";
 import BottomSection from "./BottomSilder/BottomSection";
-
-
-  const Dashboard = () => {
-    const {logoutuser, user} = useContext(userContext);
+import { IoIosArrowDown } from "react-icons/io";
+const Dashboard = () => {
+  const { logoutuser, user } = useContext(userContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    console.log(user)
+  console.log(user);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -90,7 +89,7 @@ import BottomSection from "./BottomSilder/BottomSection";
         {/* Header */}
         <header className="bg-[#FFFFFF] border text-gray-700 flex justify-between items-center p-4">
           <div className="flex items-center justify-between w-full">
-            <div className="flex items-center">
+            <div className="flex items-center gap-[20px]">
               <div>
                 <img
                   className="w-12 h-12 rounded-full"
@@ -98,20 +97,19 @@ import BottomSection from "./BottomSilder/BottomSection";
                   alt=""
                 />
               </div>
-              <div>
-                <select className="select select-secondary w-full max-w-xs border-0 focus:outline-0">
-                  <option disabled selected>
-                    {user.displayName}
-                  </option>
-                  <option>{user.email} </option>
-                </select>
+              <div className="relative">
+                <p> {user.displayName}</p>
+                <p>{user.email}</p>
+                <div className="absolute top-0 right-0 text-[20px] font-bold">
+                  <IoIosArrowDown />
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-[25px]">
               <button className="border p-3 text-2xl rounded-full">
                 <IoMdNotificationsOutline />
               </button>
-              <button onClick={()=> logoutuser()}>
+              <button onClick={() => logoutuser()}>
                 <span className="flex items-center gap-[10px] text-[20px] text-[#F15E4A]">
                   Log Out{" "}
                   <span className="bg-[#FFECEA] p-3 rounded-full">

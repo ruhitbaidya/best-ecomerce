@@ -10,8 +10,11 @@ import { FaLocationDot } from "react-icons/fa6";
 // import required modules
 import { Navigation } from "swiper/modules";
 import { FaCar } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { userContext } from "../../../UserAuth/UserAuth";
 const PersonSlider = () => {
+  const {search} = useContext(userContext);
+  console.log(search)
   const [data, setData] = useState(null)
  useEffect(()=>{
   fetch('Persons.json')
@@ -21,6 +24,14 @@ const PersonSlider = () => {
     setData(data)
   })
  }, [])
+
+ const filteredData = data?.filter(item =>
+  item.personName.toLowerCase().includes(search.toLowerCase()) ||
+  item.countryZipCode.toLowerCase().includes(search.toLowerCase())
+);
+useEffect(()=>{
+  setData(filteredData)
+}, [filteredData])
   return (
     <>
       <Swiper
