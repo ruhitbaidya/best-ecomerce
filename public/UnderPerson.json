@@ -1,0 +1,43 @@
+[
+    {
+      "zip_code": "10001",
+      "city": "New York",
+      "name": "John Doe",
+      "description": "John Doe is a software engineer based in New York City. With over a decade of experience in the tech industry, he specializes in developing scalable web applications and has a passion for machine learning. John enjoys exploring the vibrant culture of NYC, attending tech meetups, and volunteering for local tech education programs. In his free time, he likes to read science fiction novels and experiment with new programming languages.",
+      "image": "https://microplasticsindia.com/wp-content/uploads/2019/01/person2.jpg"
+    },
+    {
+      "zip_code": "20001",
+      "city": "Washington",
+      "name": "Jane Smith",
+      "description": "Jane Smith is a graphic designer located in Washington, D.C. She has a knack for creating visually appealing designs for both digital and print media. Jane's work focuses on branding and marketing materials, and she has collaborated with various startups and non-profits. Outside of work, she enjoys hiking in the nearby national parks, practicing yoga, and spending time with her family. Jane is also an advocate for sustainable design practices.",
+      "image": "https://t3.ftcdn.net/jpg/03/02/88/46/360_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg"
+    },
+    {
+      "zip_code": "30301",
+      "city": "Atlanta",
+      "name": "Michael Johnson",
+      "description": "Michael Johnson is an entrepreneur from Atlanta, Georgia. He is the founder of a successful tech startup that focuses on AI-driven solutions for businesses. Michael is passionate about innovation and often speaks at industry conferences. In addition to his professional endeavors, he enjoys exploring Atlanta's food scene, playing tennis, and mentoring young entrepreneurs. His mission is to drive technological advancements that make a positive impact on society.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAe9NZZk7nUE_anJir2Scf7tsqMHRdEpCbJg&s"
+    },
+    {
+      "zip_code": "60601",
+      "city": "Chicago",
+      "name": "Emily Davis",
+      "description": "Emily Davis is a content writer residing in Chicago. With a background in journalism and marketing, Emily crafts compelling content for a range of industries including technology, health, and finance. She loves the diversity of Chicago and often finds inspiration in the city's art scene and architectural beauty. Emily is also an avid traveler and enjoys discovering new cultures and cuisines during her international trips.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhA_VuqI8DqCHBMlOg_Y6KMjEuJsX_prJX9g&s"
+    },
+    {
+      "zip_code": "75201",
+      "city": "Dallas",
+      "name": "David Wilson",
+      "description": "David Wilson is a financial analyst based in Dallas, Texas. He specializes in investment strategies and market analysis, helping clients make informed financial decisions. David is dedicated to his profession and enjoys sharing his knowledge through workshops and seminars. When he's not working, he likes to unwind by playing guitar, watching sports, and spending time with his pets. David is also an advocate for financial literacy and education.",
+      "image": "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg"
+    },
+    {
+      "zip_code": "98101",
+      "city": "Seattle",
+      "name": "Sarah Brown",
+      "description": "Sarah Brown is a web developer living in Seattle, Washington. She is known for her expertise in front-end development and has a keen interest in creating user-friendly websites and applications. Sarah is a strong advocate for web accessibility and often contributes to open-source projects. In her free time, she enjoys hiking in the Pacific Northwest, brewing her own coffee, and attending local tech events.",
+      "image": "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+    }]
