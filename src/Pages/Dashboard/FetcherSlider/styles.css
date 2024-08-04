@@ -1,68 +1,64 @@
-
-
-.swiper {
-  width: 100%;
-  height: 100%;
+.slider-container{
+  width : 85%;
+  margin : 0 auto;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
 
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.slick-prev:hover,
+.slick-next:hover{
+  background: none;
+  color : none;
+}
+.slick-slide {
+  padding: 0 15px; /* Adjust this value to set the gap on both sides */
+  box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
-.swiper-slide img {
+.slick-list {
+  margin: 0 -15px; /* Adjust this value to counteract padding on slides */
+}
+/* .slick-arrow{
+  background : #156BCA;
+  color:#000;
+} */
+.slick-next:before,
+.slick-prev:before{
+  color:#156BCA;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
- 
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .swiper {
-    width: 100%;
-  }
-  .append-buttons {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .append-buttons button {
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid #007aff;
-    color: #007aff;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 0 10px;
-    font-size: 13px;
-  }
+/* Style for the previous and next buttons */
+.slick-prev, .slick-next {
+  width: 30px; /* Custom width */
+  height: 30px; /* Custom height */
+  border-radius: 50%; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Remove hover color and set custom background */
+.slick-prev:hover, .slick-next:hover {
+  background-color: white; /* Keep the background color the same on hover */
+}
+
+/* Icon styling */
+.slick-prev:before, .slick-next:before {
+  font-size: 30px; /* Icon size */
+  color: #156BCA; /* Icon color */
+  opacity: 1; /* Full opacity */
+}
+
+/* Positioning the previous button */
+.slick-prev {
+  left: -50px; /* Position outside the carousel container */
+  transform: translate(0, -50%);
+}
+
+/* Positioning the next button */
+.slick-next {
+  right: -50px; /* Position outside the carousel container */
+  transform: translate(0, -50%);
+}

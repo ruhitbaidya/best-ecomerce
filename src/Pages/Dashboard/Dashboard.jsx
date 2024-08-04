@@ -12,10 +12,10 @@ import { IoClose } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
 import TopSection from "./TopSection/TopSection";
-import FetchersSlider from "./FetcherSlider/FetchersSlider";
 import { userContext } from "../../UserAuth/UserAuth";
 import BottomSection from "./BottomSilder/BottomSection";
 import { IoIosArrowDown } from "react-icons/io";
+import PersonSlider from "./FetcherSlider/PersonSlider";
 const Dashboard = () => {
   const { logoutuser, user } = useContext(userContext);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,13 +25,30 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="container mx-auto">
+      <div className="flex h-screen">
       {/* Sidebar */}
       <div
-        className={`bg-[#FFFFFF] border text-white fixed md:relative top-0 right-0 md:right-auto h-full w-64 md:w-64 transform ${
+        className={`bg-[#FFFFFF] border text-white fixed md:relative top-0 right-0 md:right-auto h-full w-[50%] z-10 md:w-[20%] transform ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 md:translate-x-0`}
       >
+         <div className=" items-center gap-[20px] block md:hidden p-[20px]">
+              <div>
+                <img
+                  className="w-12 h-12 rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
+              <div className="relative text-gray-600">
+                <p> {user.displayName}</p>
+                <p>{user.email}</p>
+                <div className="absolute top-0 right-0 text-[20px] font-bold">
+                  <IoIosArrowDown />
+                </div>
+              </div>
+            </div>
         <div className="p-[20px]">
           <h2 className="text-[#4285F3] text-[40px] text-center">LOGO</h2>
         </div>
@@ -85,11 +102,11 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="w-[100%] lg:w-[80%]">
         {/* Header */}
         <header className="bg-[#FFFFFF] border text-gray-700 flex justify-between items-center p-4">
           <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-[20px]">
+            <div className="flex items-center gap-[20px] hidden md:flex">
               <div>
                 <img
                   className="w-12 h-12 rounded-full"
@@ -128,14 +145,17 @@ const Dashboard = () => {
         </header>
 
         {/* Content Area */}
-        <main className="flex-1  p-6 bg-gray-100">
+        <main className="p-6 bg-gray-100">
           <TopSection></TopSection>
           <div className="max-w-full">
-            <FetchersSlider></FetchersSlider>
+            <div className="my-[20px] bg-white py-[20px] rounded-lg">
+            <PersonSlider></PersonSlider>
+            </div>
             <BottomSection></BottomSection>
           </div>
         </main>
       </div>
+    </div>
     </div>
   );
 };

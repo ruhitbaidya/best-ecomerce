@@ -23,7 +23,7 @@ const BottomSection = () => {
       <div className="flex-1">
         <h2 className="text-[20px] font-bold">Popular Cities</h2>
         <div className="bg-white p-[20px] mt-[20px] rounded-lg">
-            <div className="grid grid-cols-3  text-center ">
+            <div className="grid grid-cols-2  lg:grid-cols-3  text-center ">
               {
                 cityName?.map((item)=> <p key={item.id} className="row-item text-[#156BCA] underline p-[20px]"><Link to="">{item.cityName}</Link></p>)
               }
